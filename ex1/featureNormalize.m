@@ -7,7 +7,8 @@ function [X_norm, mu, sigma] = featureNormalize(X)
 
 % You need to set these values correctly
 X_norm = X;
-mu = zeros(1, size(X, 2));
+mu = zeros(1, size(X, 2));   %kyu ki sabki mean hoke 1 hi value return hogi na,
+%toh ans sirf 3 values hi hogi
 sigma = zeros(1, size(X, 2));
 
 % ====================== YOUR CODE HERE ======================
@@ -30,7 +31,9 @@ sigma = zeros(1, size(X, 2));
 mu = mean(X);
 sigma = std(X);
 
-b = ones(length(X),1);
+b = ones(length(X),1); %Element wise multiplication kartni hai toh mean ko all
+% element match karne ke liye mean ko bada karna padega uski preparation
+
 X_norm = (X-(b*mu))./(b*sigma);
 % ============================================================
 
